@@ -51,7 +51,7 @@ $CONDA_BIN/conda install --yes --quiet pip ipython-notebook #&> /dev/null
 df
 
 echo "-----> Cleaning cache..."
-$CONDA_BIN/conda clean --yes --quiet 
+$CONDA_BIN/conda clean --yes
 
 df
 
@@ -62,7 +62,7 @@ $CONDA_BIN/conda install --yes --quiet matplotlib plotly seaborn pandas #&> /dev
 df
 
 echo "-----> Cleaning cache..."
-$CONDA_BIN/conda clean --yes --quiet 
+$CONDA_BIN/conda clean --yes
 
 df
 
@@ -73,7 +73,7 @@ $CONDA_BIN/jupyter serverextension enable --py jupyterlab --user
 df
 
 echo "-----> Cleaning cache..."
-$CONDA_BIN/conda clean --yes --quiet 
+$CONDA_BIN/conda clean --yes
 
 df
 
