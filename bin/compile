@@ -95,4 +95,7 @@ then
 	echo "-----> Additional IPython configuration file detected"
 fi
 
+ls -al ~/miniconda/
+ls -al /tmp
+
 echo "-----> Finished compile step"
