@@ -41,17 +41,41 @@ fi
 if [ -e $CONDA_HOME ]; then rm -rf $CONDA_HOME; fi
 $MINICONDA_CACHE -b -p $CONDA_HOME #&> /dev/null
 
+df
+
 echo "-----> Installing Dependencies..."
 $CONDA_BIN/conda update --yes --quiet conda #&> /dev/null
 $CONDA_BIN/conda install --yes --quiet pip ipython-notebook #&> /dev/null
+
+
+df
+
+echo "-----> Cleaning cache..."
+$CONDA_BIN/conda clean --yes --quiet 
+
+df
 
 echo "-----> Installing Conveniences..."
 $CONDA_BIN/conda install --yes --quiet -c anaconda psycopg2
 $CONDA_BIN/conda install --yes --quiet matplotlib plotly seaborn pandas #&> /dev/null
 
+df
+
+echo "-----> Cleaning cache..."
+$CONDA_BIN/conda clean --yes --quiet 
+
+df
+
 echo "-----> Installing JupyterLab..."
 $CONDA_BIN/pip install jupyterlab #&> /dev/null
 $CONDA_BIN/jupyter serverextension enable --py jupyterlab --user
+
+df
+
+echo "-----> Cleaning cache..."
+$CONDA_BIN/conda clean --yes --quiet 
+
+df
 
 if [ -e "$ROOT/requirements.txt" ]; then
     echo "-----> Installing additional requirements using conda..."
